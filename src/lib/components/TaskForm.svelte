@@ -1,0 +1,50 @@
+<script>
+    import { tasks } from '$lib/stores/taskStore';
+    
+    export let id;
+    let title = '';
+    let description = '';
+    let isExpanded = false;
+    
+    function handleSubmit() {
+      if (title.trim()) {
+        tasks.addTask(id, { title, description });
+        title = '';
+        description = '';
+        isExpanded = false;
+      }
+    }
+  </script>
+  
+  <form on:submit|preventDefault={handleSubmit} class="mt-4 space-y-2">
+    <input
+      bind:value={title}
+      placeholder="Add new task"
+      class="w-full p-2 rounded border border-gray-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none"
+      on:focus={() => isExpanded = true}
+    />
+    
+    {#if isExpanded}
+      <textarea
+        bind:value={description}
+        placeholder="Add description (optional)"
+        rows="2"
+        class="w-full p-2 rounded border border-gray-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none resize-none"
+      ></textarea>
+      <div class="flex justify-end space-x-2">
+        <button 
+          type="button"
+          class="px-3 py-1 text-sm text-gray-600 hover:text-gray-800"
+          on:click={() => isExpanded = false}
+        >
+          Cancel
+        </button>
+        <button 
+          type="submit"
+          class="px-3 py-1 text-sm bg-blue-500 text-white rounded hover:bg-blue-600"
+        >
+          Add Task
+        </button>
+      </div>
+    {/if}
+  </form>
