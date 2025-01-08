@@ -14,12 +14,12 @@
 </script>
   
 <div
-    class="bg-white p-3 rounded shadow cursor-move hover:shadow-md transition-shadow"
+    class="bg-white dark:bg-gray-700 p-3 rounded shadow cursor-move hover:shadow-md transition-all"
     draggable="true"
     on:dragstart={handleDragStart}
 >
-    <h3 class="font-semibold text-gray-800">{task.title}</h3>
+    <h3 class="font-semibold text-gray-800 dark:text-white">{task.title}</h3>
     {#if task.description}
-      <p class="text-sm text-gray-600 mt-1">{task.description}</p>
+      <p class="text-sm text-gray-600 dark:text-gray-300 mt-1">{task.description}</p>
     {/if}
 </div>
