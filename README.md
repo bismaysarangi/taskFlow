@@ -1,38 +1,35 @@
-# sv
+TaskFlow
+TaskFlow is a lightweight, Kanban-style task management application built with SvelteKit and Tailwind CSS. It enables users to organize tasks into "To Do," "In Progress," and "Completed" columns with drag-and-drop functionality, task creation, and dark mode support.
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Features
+Kanban-Style Task Management: Organize tasks across three columns: "To Do," "In Progress," and "Completed."
+Drag-and-Drop Functionality: Seamlessly move tasks between columns.
+Add and Delete Tasks: Create new tasks with optional descriptions and remove existing ones.
+Dark Mode: Switch between light and dark themes.
+Responsive Design: Optimized for mobile and desktop views.
+Installation
+Prerequisites
+Node.js (v16 or later)
+npm or yarn
+Steps
+Clone the repository:
 
-## Creating a project
+bash
+Copy code
+git clone https://github.com/your-username/taskflow.git
+cd taskflow
+Install dependencies:
 
-If you're seeing this, you've probably already done this step. Congrats!
+bash
+Copy code
+npm install
+Start the development server:
 
-```bash
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
+bash
+Copy code
 npm run dev
+Open your browser and visit:
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+arduino
+Copy code
+http://localhost:5173
