@@ -14,19 +14,26 @@ const initialTasks = {
 };
 
 const createTaskStore = () => {
-  const { subscribe, set, update } = writable(initialTasks);
+  const { subscribe, update } = writable(initialTasks);
 
   return {
     subscribe,
-    addTask: (columnId, task) => update(store => {
-      store[columnId] = [...store[columnId], task];
-      return store;
-    }),
-    moveTask: (fromColumn, toColumn, taskIndex) => update(store => {
-      const task = store[fromColumn].splice(taskIndex, 1)[0];
-      store[toColumn].push(task);
-      return store;
-    })
+    addTask: (columnId, task) =>
+      update(store => {
+        store[columnId] = [...store[columnId], task];
+        return store;
+      }),
+    moveTask: (fromColumn, toColumn, taskIndex) =>
+      update(store => {
+        const task = store[fromColumn].splice(taskIndex, 1)[0];
+        store[toColumn].push(task);
+        return store;
+      }),
+    deleteTask: (columnId, taskIndex) =>
+      update(store => {
+        store[columnId].splice(taskIndex, 1);
+        return store;
+      })
   };
 };
 

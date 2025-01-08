@@ -2,7 +2,7 @@
     import Task from './Task.svelte';
     import TaskForm from './TaskForm.svelte';
     import { tasks as taskStore } from '$lib/stores/taskStore';
-    
+  
     export let title;
     export let id;
     export let tasks;
@@ -20,8 +20,8 @@
     }
 </script>
   
-<div 
-    class="w-72 bg-gray-200 dark:bg-gray-800 rounded-lg p-4 transition-colors"
+<div
+    class="w-full md:w-1/3 bg-gray-200 dark:bg-gray-800 rounded-lg p-4 transition-colors"
     on:dragover={handleDragOver}
     on:drop={handleDrop}
 >
@@ -33,3 +33,4 @@
     </div>
     <TaskForm {id} />
 </div>
+  
